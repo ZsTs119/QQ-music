@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zs_Ts119</title>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/lyric.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<script>
+    /*
+        *  <i> </i>
+        *   可以用来存放图标
+        * <a title="文本"/>
+        *    title：悬停超链接上显示文本
+        *
+        *
+        * user-select  ||  -ms-user-select: none;
+        *    :禁止文本选中  (in IE 10.)
+        *
+        *  禁止文本选中 （兼容所有浏览器）
+        *   -moz-user-select: -moz-none;
+        *    -khtml-user-select: none;
+        *   -webkit-user-select: none;
+        *
+        * vertical-align
+        *    :设置元素的垂直方式对齐
+        *
+        * background-size:cover
+        *    ：使图片铺满屏幕
+        *
+        * z-index
+        *    ：使元素至于底层还是顶层
+        *
+        * filter:blur()
+        *    ：使图片模糊
+        *
+        * 进度条三步骤
+        *    <div 背景>
+        *        <div 前景>
+        *           <div 进度圆点>
+        *
+        *           </div>
+        *        </div>
+        *    </div>
+        *
+        *  高斯背景两步骤
+        *     背景底色    :
+        *            背景图片
+        *            ab定位 高0 左0
+        *            宽度高度百分百
+        *            background-size:cover  使图片铺满屏幕
+        *            z-index:-2   置于遮障下
+        *            filter:blur()  使图片模糊 值越大越模糊
+        *
+        *     灰色遮障    :
+        *            ab定位 高0 左0
+        *            宽度高度百分百
+        *            z-index:-1   置于底层下
+         *            background: rgba(0,0,0,0.35)
+         *
+         * ajax对象会有四个参数
+       *   1： url:  从哪加载
+       *   2： dateType: 加载什么类型
+       *   3：success:function(date){} 成功之后做什么
+       *   4：error: funtion(e){} 失败之后做什么
+        *
+        * color: transparent：
+        *   修改颜色为透明状态
+        *
+        * !important：
+        *   修改类为优先状态
+        *
+        * audio.paused:
+        *     查看当前的播放暂停状态
+        *
+        * audio.play()：
+        *     修改状态为播放状态
+        *
+        * audio.pause()：
+        *      修改状态为暂停状态
+        *
+        * trigger("事件名")
+        *       :自动触发事件
+        *
+        *    删除的位置  删除的数量
+        * splice(index，howmany,（可选 添加新项目）)
+        *       ：/从数组中添加/删除项目，然后返回被删除的项目。
+        *        注意：如果删除的数量为0 则不会删除项目
+        *
+        *  onkeydown:
+        *        键盘按下事件
+        *        event.keycode：按下键盘的编码 来触发事件
+        *
+        *  ontimeupdate:
+        *   事件在视频/音频（audio/video）当前的播放位置发送改变时触发。
+        *   该事件通常以下方式调用
+        *             播放视频/音频（audio/video）
+        *             重新定位视频/音频（audio/video）的播放位置。
+        *   该事件通常与 Video 对象的（一起使用）
+        *                   audio.currentTime;   //返回当前video对象的当前秒数
+        *                   audio.duration;      /返回当前video对象的总秒数
+        *
+        *  exec()：
+        *        方法用于检索字符串中的正则表达式的匹配。
+        *
+        *  toFload(number):
+        *        将得到的数值保留几位小数 但是会转换为文本类型
+        *
+        *  push():
+        *        方法可向数组的末尾添加一个或多个元素，并返回新的长度。
+       */
+
+</script>
+<div class="header">
+    <h1 class="logo"><a href="#"></a></h1>
+    <ul class="register">
+        <li>登录</li>
+        <li>设置</li>
+    </ul>
+</div>
+<div class="content">
+    <div class="content_in">
+        <div class="content_left">
+            <div class="content_toolbar">
+                <span><i></i>收藏</span>
+                <span><i></i>添加到</span>
+                <span><i></i>下载</span>
+                <span><i></i>删除</span>
+                <span><i></i>清空列表</span>
+            </div>
+            <div class="content_list" data-mcs-theme="minimal-dark">
+                <ul>
+                    <li class="list_title">
+                        <div class="list_check"><i></i></div>
+                        <div class="list_number"></div>
+                        <div class="list_name">歌曲</div>
+                        <div class="list_singer">歌手</div>
+                        <div class="list_time">时长</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_right">
+            <div class="song_info">
+                <a href="javascript:;" class="song_info_pic">
+                    <img src="" alt="">
+                </a>
+                <div class="song_info_name">歌曲名称:
+                    <a href="javascript:;">Zs_Ts119</a>
+                </div>
+                <div class="song_info_singer">歌手名:
+                    <a href="javascript:;">Zs_Ts119</a>
+                </div>
+                <div class="song_info_ablum">专辑名:
+                    <a href="javascript:;">Zs_Ts119</a>
+                </div>
+            </div>
+            <div class="song_lyric_container">
+                <ul class="song_lyric">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer_in">
+        <a href="javascript:;" class="music_pre"></a>
+        <a href="javascript:;" class="music_play"></a>
+        <a href="javascript:;" class="music_next"></a>
+        <div class="music_progress_info">
+            <div class="music_progress_top">
+                <span class="music_progress_name">Zs_Ts119</span>
+                <span class="music_progress_time">00:00 / 05:23</span>
+            </div>
+            <div class="music_progress_bar">
+                <div class="music_progress_line">
+                    <div class="music_progress_dot"></div>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="music_mode"></a>
+        <a href="javascript:;" class="music_fav"></a>
+        <a href="javascript:;" class="music_down"></a>
+        <a href="javascript:;" class="music_comment"></a>
+        <a href="javascript:;" class="music_only"></a>
+        <div class="music_voice_info">
+            <a href="javascript:;" class="music_voice_icon"></a>
+            <div class="music_voice_bar">
+                <div class="music_voice_line">
+                    <div class="music_voice_dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mask_bg"></div>
+<div class="mask"></div>
+<audio src=""></audio>
+</body>
+</html>
